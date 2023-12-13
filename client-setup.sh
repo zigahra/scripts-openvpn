@@ -30,10 +30,10 @@ echo "<ca>"
 cat /etc/openvpn/ca.crt
 echo "</ca>"
 echo "<cert>"
-cat /etc/openvpn/client.crt
+cat client.crt
 echo "</cert>"
 echo "<key>"
-cat /etc/openvpn/client.key
+cat client.key
 echo "</key>"
 echo "resolv-retry infinite
 nobind
