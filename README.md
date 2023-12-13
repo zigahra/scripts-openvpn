@@ -33,7 +33,7 @@ bash client-setup.sh
 Entrez les informations requises, telles que l'adresse IP du serveur et les informations d'identification.
 
 ## Prérequis
-
+Configuration requise :
 OS : Dedian 10 (Docker)
 
 ## Avertissement
