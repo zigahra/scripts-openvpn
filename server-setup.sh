@@ -1,15 +1,12 @@
 #!/bin/bash
 
-export C2LC="FR"
-export STATE="France"
-export LOCALITY="Paris"
-export ORGANISM=""
-export UNIT=""
-export NAME=""
-export MAIL=""
+export C="GB"
+export ST="London"
+export L="London"
+export O="Global Security"
+export OU="IT Department"
+export CN="example.com"
 
-echo -n Choose a password: 
-read -s pass
 
 ## Creating and moving to a specific directory to create the certificates
 mkdir config-files
@@ -17,7 +14,7 @@ cd config-files
 
 ## Creating certification authority
 openssl genrsa -des3 -out ca.key 4096
-printf '$C2LC\n$STATE\n$LOCALITY\n$ORGANISM\n$UNIT\n$NAME\n$MAIL\n\n' | openssl req -new -x509 -utf8 -days 36500 -key ca.key -out ca.crt
+openssl req -new -x509 -utf8 -days 36500 -key ca.key -out ca.crt -subj "/C=$C/ST=$ST/L=$L/O=$O/OU=$OU/CN=$CN"
 echo -n
 
 ## Creating server's certification
@@ -28,7 +25,7 @@ extendedKeyUsage=serverAuth
 EOF
 
 openssl genrsa -out server.key 4096
-printf '$C2LC\n$STATE\n$LOCALITY\n$ORGANISM\n$UNIT\n$NAME\n$MAIL\n\n' | openssl req -new -utf8 -key server.key -out server.csr
+openssl req -new -utf8 -key server.key -out server.csr -subj "/C=$C/ST=$ST/L=$L/O=$O/OU=$OU/CN=$CN"
 openssl x509 -req -days 36500 -in server.csr -CA ca.crt -CAkey ca.key -set_serial 01 -out server.crt -extfile openssl.x509.server.conf
 rm server.csr
 
