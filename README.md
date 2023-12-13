@@ -34,7 +34,7 @@ Entrez les informations requises, telles que l'adresse IP du serveur et les info
 
 ## Prérequis
 
-OpenVPN doit être installé sur le serveur avant d'utiliser le script de configuration du serveur.
+OS : Dedian 10 (Docker)
 
 ## Avertissement
 
