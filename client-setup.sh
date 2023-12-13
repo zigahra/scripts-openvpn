@@ -1,8 +1,14 @@
 #!/bin/bash
 
 export IP=<you-ip-address>
-export PORT=1194
 export CLIENT=client_tap
+export PORT=1194
+export C="GB"
+export ST="London"
+export L="London"
+export O="Global Security"
+export OU="IT Department"
+export CN="example.com"
 
 ## Creating and moving to a specific directory to create the certificates
 mkdir config-files
