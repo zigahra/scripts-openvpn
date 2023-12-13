@@ -8,8 +8,6 @@ Ce référentiel (repo) contient des scripts facilitant la configuration des ser
 
 2. **`client-setup.sh`**: Facilite la configuration des clients OpenVPN. En utilisant ce script, les utilisateurs peuvent générer rapidement les fichiers de configuration nécessaires pour se connecter au serveur VPN.
 
-3. **`config-templates/`**: Répertoire contenant des modèles de fichiers de configuration pour le serveur et les clients. Ces modèles sont utilisés par les scripts pour générer des configurations personnalisées.
-
 ## Guide d'Utilisation
 
 ### Configuration du Serveur OpenVPN
