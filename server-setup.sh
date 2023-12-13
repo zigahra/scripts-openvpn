@@ -63,3 +63,5 @@ key server.key
 dh dh2048.pem
 ;tls-auth ta.key 0
 EOF
+
+# systemctl start openvpn@server_tap.service
