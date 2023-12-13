@@ -41,7 +41,7 @@ sudo openvpn --genkey secret ta.key
 openssl dhparam -out dh2048.pem 2048
 
 ## Install the server configuration files and rm the folder config-files
-sudo mv ca.crt dh2048.pem server.crt server.key ta.key /etc/openvpn/.
+sudo mv * /etc/openvpn/.
 cd .. 
 rm -r config-files
 
