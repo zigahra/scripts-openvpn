@@ -23,7 +23,7 @@ openssl req -new -x509 -utf8 -days 36500 -key ca.key -out ca.crt -subj "/C=$C/ST
 echo -n
 
 ## Creating server's certification
-cat <<EOF > openssl.x509.client.conf 
+cat <<EOF > openssl.x509.server.conf 
 # These extensions are added when 'ca' signs a request.
 keyUsage = digitalSignature, keyEncipherment
 extendedKeyUsage=serverAuth
