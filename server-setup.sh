@@ -34,7 +34,7 @@ rm server.csr
 sudo openvpn --genkey secret ta.key
 
 ## Creating Diffie-Hellman file
-openssl dhparam -out dh1024.pem 1024
+openssl dhparam -out dh2048.pem 2048
 
 ## Install the server configuration files and rm the folder config-files
 sudo mv ca.crt dh1024.pem server.crt server.key ta.key /etc/openvpn/.
@@ -42,7 +42,8 @@ cd ..
 rm -r config-files
 
 ## Create the needed network interfaces
-sudo ip tuntap add mode tap tap0
+sudo ip tuntap add mode tap tap0 # Pb: flag NO-CARRIER is generated
+#sudo tunctl -t tap0 # package : uml-utilities
 sudo ip link set tap0 up
 sudo ip link add br0 type bridge
 sudo ip link set br0 up
@@ -50,7 +51,7 @@ sudo ip link set br0 master tap0
 
 ## Add server laucher configuration 
 sudo cat <<EOF > /etc/openvpn/server_tap.conf
-server-bridge 10.0.0.0 255.255.255.0 10.0.0.200 10.10.0.254
+server-bridge 10.0.0.2 255.255.255.0 10.0.0.200 10.10.0.254
 dev tap0
 proto tcp
 port $PORT
@@ -59,6 +60,6 @@ keepalive 10 120
 ca ca.crt
 cert server.crt
 key server.key
-dh dh1024.pem
+dh dh2048.pem
 ;tls-auth ta.key 0
 EOF
