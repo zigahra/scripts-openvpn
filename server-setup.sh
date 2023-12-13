@@ -33,4 +33,4 @@ rm server.csr
 sudo openvpn --genkey secret ta.key
 
 ## Creating Diffie-Hellman file
-#openssl dhparam -out dh4096.pem 4096
+openssl dhparam -out dh1024.pem 1024
