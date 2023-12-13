@@ -30,7 +30,7 @@ openssl x509 -req -days 36500 -in server.csr -CA ca.crt -CAkey ca.key -set_seria
 rm server.csr
 
 ## Creating the tls-auth key
-sudo openvpn --genkey --secret ta.key
+sudo openvpn --genkey secret ta.key
 
 ## Creating Diffie-Hellman file
 #openssl dhparam -out dh4096.pem 4096
