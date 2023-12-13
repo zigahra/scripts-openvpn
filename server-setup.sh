@@ -51,7 +51,7 @@ sudo ip tuntap add mode tap tap0 # Pb: flag NO-CARRIER is generated
 sudo ip link set tap0 up
 sudo ip link add br0 type bridge
 sudo ip link set br0 up
-sudo ip link set br0 master tap0
+sudo ip link set dev tap0 master br0
 
 ## Add server laucher configuration 
 sudo cat <<EOF > /etc/openvpn/server_tap.conf
