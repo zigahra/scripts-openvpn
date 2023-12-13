@@ -21,24 +21,25 @@ openssl x509 -req -days 36500 -in client.csr -CA ca.crt -CAkey ca.key -set_seria
 rm client.csr
 
 {
-  	client
-	dev tap
-	remote $IP $PORT
-	proto tcp
-	echo "<ca>"
-	cat /etc/openvpn/ca.crt
-	echo "</ca>"
-	echo "<cert>"
-	cat /etc/openvpn/client.crt
-	echo "</cert>"
-	echo "<key>"
-	cat /etc/openvpn/client.key
-	echo "</key>"
- 	resolv-retry infinite
-	nobind
-	persist-key
-	persist-tun
-	ignore-unknown-option block-outside-dns
- 	verb 3
-	} > "$CLIENT".ovpn
+echo "
+client
+dev tap
+remote $IP $PORT
+proto tcp"
+echo "<ca>"
+cat /etc/openvpn/ca.crt
+echo "</ca>"
+echo "<cert>"
+cat /etc/openvpn/client.crt
+echo "</cert>"
+echo "<key>"
+cat /etc/openvpn/client.key
+echo "</key>"
+echo "resolv-retry infinite
+nobind
+persist-key
+persist-tun
+ignore-unknown-option block-outside-dns
+verb 3"
+} > "$CLIENT".ovpn
 
