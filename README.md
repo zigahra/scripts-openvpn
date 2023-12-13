@@ -26,7 +26,7 @@ systemctl start openvpn@server_tap.service
 ```
 
 ### Configuration des Clients OpenVPN
-Exécutez le script client-setup.sh sur chaque client.
+Exécutez le script client-setup.sh pour chaque client.
 ```bash
 bash client-setup.sh
 ```
