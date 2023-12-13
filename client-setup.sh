@@ -23,7 +23,7 @@ EOF
 
 openssl genrsa -out client.key 4096
 openssl req -new -utf8 -key client.key -out client.csr -subj "/C=$C/ST=$ST/L=$L/O=$O/OU=$OU/CN=$CN"
-openssl x509 -req -days 36500 -in client.csr -CA ca.crt -CAkey ca.key -set_serial 01 -out client.crt -extfile openssl.x509.client.conf
+openssl x509 -req -days 36500 -in client.csr -CA /etc/openvpn/ca.crt -CAkey /etc/openvpn/ca.key -set_serial 01 -out client.crt -extfile openssl.x509.client.conf
 rm client.csr
 
 {
