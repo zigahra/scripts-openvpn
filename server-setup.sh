@@ -52,6 +52,8 @@ sudo ip link set tap0 up
 sudo ip link add br0 type bridge
 sudo ip link set br0 up
 sudo ip link set dev tap0 master br0
+sudo ip addr add 10.0.0.2/24 dev tap0
+sudo ip addr add 10.0.0.1/24 dev br0
 
 ## Add server laucher configuration 
 sudo cat <<EOF > /etc/openvpn/server_tap.conf
