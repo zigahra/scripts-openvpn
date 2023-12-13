@@ -47,5 +47,5 @@ persist-key
 persist-tun
 ignore-unknown-option block-outside-dns
 verb 3"
-} > "$CLIENT".ovpn
+} > ../"$CLIENT".ovpn
 
