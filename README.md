@@ -34,7 +34,7 @@ Entrez les informations requises, telles que l'adresse IP du serveur et les info
 
 ## Prérequis
 Configuration requise :
-OS : Dedian 10 (Docker)
+- OS : Dedian 10 (Docker)
 
 ## Avertissement
 
