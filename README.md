@@ -20,7 +20,7 @@ Ce référentiel (repo) contient des scripts facilitant la configuration des ser
 sudo bash server-setup.sh
 ```
 
-Suivez les instructions à l'écran pour spécifier les paramètres de configuration du serveur.
+Suivez les instructions à l'écran pour spécifier les paramètres de configuration du serveur, puis exécuter le serveur à l'aide de `systemctl start openvpn@server_tap.service`.
 
 ### Configuration des Clients OpenVPN
 Exécutez le script client-setup.sh sur chaque client.
