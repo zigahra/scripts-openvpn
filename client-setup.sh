@@ -8,7 +8,7 @@ export CLIENT=client_tap
 mkdir config-files
 cd config-files
 
-## Creating server's certification
+## Creating client's certification
 cat <<EOF > openssl.x509.server.conf 
 # These extensions are added when 'ca' signs a request.
 keyUsage = digitalSignature
