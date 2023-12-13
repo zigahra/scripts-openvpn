@@ -11,7 +11,7 @@ export CN="example.com"
 ## Install dependencies
 sudo apt update
 sudo apt upgrade
-sudo apt install openssl, openvpn
+sudo apt install openssl openvpn
 
 ## Creating and moving to a specific directory to create the certificates
 mkdir config-files
