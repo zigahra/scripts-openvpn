@@ -1,11 +1,19 @@
 #!/bin/bash
 
-client
-dev tap
-remote SRV.domain
-proto tcp
-port PORT
+export IP=<you-ip-address>
+export PORT=1194
+export CLIENT=client_tap
 
-ca cacert.pem
-cert CLNT.crt
-key CLNT.key
+{
+  cat /etc/openvpn/server/client-common.txt
+	echo "<ca>"
+	cat /etc/openvpn/ca.crt
+	echo "</ca>"
+	echo "<cert>"
+	cat /etc/openvpn/ca.crt
+	echo "</cert>"
+	echo "<key>"
+	cat /etc/openvpn/ca.crt
+	echo "</key>"
+	} > "$CLIENT".ovpn
+
