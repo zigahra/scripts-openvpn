@@ -55,7 +55,7 @@ sudo ip link set br0 master tap0
 
 ## Add server laucher configuration 
 sudo cat <<EOF > /etc/openvpn/server_tap.conf
-server-bridge 10.0.0.2 255.255.255.0 10.0.0.200 10.10.0.254
+server-bridge 10.0.0.2 255.255.255.0 10.0.0.200 10.0.0.254
 dev tap0
 proto tcp
 port $PORT
