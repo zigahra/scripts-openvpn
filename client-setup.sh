@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export IP=<you-ip-address>
+export IP=162.19.224.103
 export CLIENT=client_tap
 export PORT=1194
 export C="GB"
@@ -15,7 +15,7 @@ mkdir config-files
 cd config-files
 
 ## Creating client's certification
-cat <<EOF > openssl.x509.server.conf 
+cat <<EOF > openssl.x509.client.conf 
 # These extensions are added when 'ca' signs a request.
 keyUsage = digitalSignature
 extendedKeyUsage=clientAuth
