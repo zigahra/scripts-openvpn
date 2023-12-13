@@ -10,10 +10,10 @@ export CLIENT=client_tap
 	cat /etc/openvpn/ca.crt
 	echo "</ca>"
 	echo "<cert>"
-	cat /etc/openvpn/ca.crt
+	cat /etc/openvpn/client.crt
 	echo "</cert>"
 	echo "<key>"
-	cat /etc/openvpn/ca.crt
+	cat /etc/openvpn/client.key
 	echo "</key>"
 	} > "$CLIENT".ovpn
 
